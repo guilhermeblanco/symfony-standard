@@ -11,6 +11,12 @@ _demo:
     type:     annotation
     prefix:   /demo
 
+_demo:
+    resource: "@AcmeDemoBundle/Controller/IssueController.php"
+    type:     annotation
+    prefix:   /issue
+
+
 _wdt:
     resource: "@WebProfilerBundle/Resources/config/routing/wdt.xml"
     prefix:   /_wdt

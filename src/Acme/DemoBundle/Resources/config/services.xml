@@ -14,5 +14,38 @@
             <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController" />
             <argument type="service" id="twig.extension.acme.demo" />
         </service>
+
+
+        <!-- Form Services: Profile -->
+        <service id="acme.demo.form.profile"
+                 factory-method="createNamed"
+                 factory-service="form.factory"
+                 class="Symfony\Component\Form\Form">
+            <argument>profile</argument>
+            <argument>acme_demo_profile_form</argument>
+        </service>
+
+        <service id="acme.demo.form_type.profile"
+                 class="Acme\DemoBundle\Form\Type\ProfileFormType">
+            <tag name="form.type"
+                 alias="acme_demo_profile_form"/>
+        </service>
+
+
+        <!-- Form Services: Profile List -->
+        <service id="acme.demo.form.profile_list"
+                 factory-method="createNamed"
+                 factory-service="form.factory"
+                 class="Symfony\Component\Form\Form">
+            <argument>profile_list</argument>
+            <argument>acme_demo_profile_list_form</argument>
+        </service>
+
+        <service id="acme.demo.form_type.profile_list"
+                 class="Acme\DemoBundle\Form\Type\ProfileListFormType">
+            <tag name="form.type"
+                 alias="acme_demo_profile_list_form"/>
+        </service>
+
     </services>
 </container>

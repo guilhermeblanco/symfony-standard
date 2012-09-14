@@ -1,0 +1,11 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block title "Symfony - Demos" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <form action="{{ path('_issue') }}" method="POST">
+        {{ form_widget(form) }}
+    </form>
+{% endblock %}
